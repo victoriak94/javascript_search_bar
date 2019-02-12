@@ -1,18 +1,19 @@
-function searchFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myinput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById('wrapper');
-    li = ul.getElementsByTagName('li');
 
-    for(i=0 ; i< li.length; i++){
-        a = li[i].getElementsByTagName('a')[0];
-        if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
-            li[i].style.display = "";
-        }
+   let filterInput = document.getElementById('filterInput');
+   filterInput.addEventListener('keyup', filterNames);
 
-        else{
-            li[i].style.display = 'none';
-        }
-    }
-}
+   function filterNames(){
+     let filterValue = document.getElementById('filterInput').value.toUpperCase();
+     let ul = document.getElementById('names');
+     let li = ul.querySelectorAll('li.name-item');
+
+     for(let i = 0; i < li.length; i++){
+       let a = li[i].getElementsByTagName('a')[0];
+       if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+         li[i].style.display = '';
+       } else {
+         li[i].style.display = 'none';
+       }
+     }
+
+   }
