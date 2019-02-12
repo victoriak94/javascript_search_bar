@@ -1,11 +1,11 @@
 
-   let filterInput = document.getElementById('filterInput');
-   filterInput.addEventListener('keyup', filterNames);
+   let filterInput = document.querySelector("#filterInput");
+   filterInput.addEventListener("keyup", filterNames);
 
    function filterNames(){
-     let filterValue = document.getElementById('filterInput').value.toUpperCase();
-     let ul = document.getElementById('names');
-     let li = ul.querySelectorAll('li.name-item');
+     let filterValue = document.querySelector("#filterInput").value.toUpperCase();
+     let ul = document.querySelector("#names");
+     let li = ul.querySelectorAll("li.name-item");
 
      for(let i = 0; i < li.length; i++){
        let a = li[i].getElementsByTagName('a')[0];
